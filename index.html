@@ -1,0 +1,1431 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#180a26">
+<title>For My Bangaram 💗</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+
+:root {
+  --pink: #ff8bb8;
+  --hot: #ff4f91;
+  --purple: #bba2ff;
+  --gold: #ffe6b5;
+  --white: #fff2f8;
+  --muted: #dec4d9;
+  --glass: rgba(255,255,255,.075);
+  --border: rgba(255,204,229,.23);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  background:
+    radial-gradient(ellipse at 15% 15%, #68234f 0%, transparent 40%),
+    radial-gradient(ellipse at 90% 45%, #38275f 0%, transparent 45%),
+    linear-gradient(145deg, #180a26, #28112f 55%, #100a22);
+  background-size: 130% 130%, 130% 130%, 100% 100%;
+  background-position: 0% 0%, 100% 50%, 0% 0%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  animation: bodyGlow 18s ease-in-out infinite alternate;
+}
+
+@keyframes bodyGlow {
+  0% { background-position: 0% 0%, 100% 50%, 0% 0%; }
+  100% { background-position: 18% 20%, 82% 65%, 0% 0%; }
+}
+
+button { font: inherit; }
+
+#stars, #hearts, #sparkles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+#stars { z-index: 0; }
+#sparkles { z-index: 0; }
+
+.star, .sparkle {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  background: rgba(255,255,255,.86);
+  box-shadow: 0 0 12px rgba(255,184,217,.95);
+  animation: twinkle 3s ease-in-out infinite alternate;
+}
+
+.star {
+  width: 2px;
+  height: 2px;
+}
+
+.sparkle {
+  width: 6px;
+  height: 6px;
+  background: linear-gradient(135deg, #fff9c7, #ffc4e3, #d7c9ff);
+  clip-path: polygon(50% 0%, 60% 38%, 100% 50%, 60% 62%, 50% 100%, 40% 62%, 0% 50%, 40% 38%);
+  opacity: .8;
+  animation: twinkle 2.8s ease-in-out infinite alternate, drift 10s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0% { opacity: .18; transform: scale(.72) rotate(0deg); }
+  50% { opacity: .95; transform: scale(1.3) rotate(60deg); }
+  100% { opacity: 1; transform: scale(1.8) rotate(120deg); }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(.85); }
+  50% { transform: translate3d(8px, -12px, 0) scale(1.2); }
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 5%;
+  background: #180a26b8;
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid #ffffff0d;
+}
+
+.logo {
+  font-weight: 700;
+  color: #ffd4e7;
+  letter-spacing: .06em;
+  font-size: .85rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 17px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #efd6e7;
+  font-size: .78rem;
+}
+
+.nav a:hover { color: var(--pink); }
+
+section, header {
+  position: relative;
+  z-index: 1;
+}
+
+section { padding: 95px 6%; }
+
+.hero {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 115px 5% 75px;
+}
+
+.hero-inner {
+  max-width: 900px;
+  width: 100%;
+}
+
+.eyebrow {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .26em;
+  color: #ffc0dc;
+}
+
+h1, h2, h3, .script {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+.hero h1 {
+  font-size: clamp(3.2rem, 10vw, 7.6rem);
+  line-height: .98;
+  margin: 25px 0;
+  background: linear-gradient(115deg, #fff, #ffb5d5, #c7b5ff, #ffe9bf);
+  background-size: 220%;
+  color: transparent;
+  background-clip: text;
+  animation: shine 8s linear infinite, shimmerPulse 3.5s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 25px #ff7cb530);
+}
+
+@keyframes shine { to { background-position: 220%; } }
+
+@keyframes shimmerPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1.015); }
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 18px auto;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.btn {
+  padding: 14px 23px;
+  border-radius: 100px;
+  border: 1px solid #ffb8d6;
+  background: linear-gradient(110deg, #ff6c9f, #a984ff, #ffb5d5);
+  background-size: 180% 100%;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease, filter .25s ease, background-position .6s ease;
+  box-shadow: 0 0 25px #ff4f9127;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 20%, rgba(255,255,255,.5) 50%, transparent 80%);
+  transform: translateX(-120%);
+  transition: transform .8s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 0 35px #ff4f9160;
+  background-position: 100% 50%;
+  filter: brightness(1.06);
+}
+
+.btn:hover::before {
+  transform: translateX(120%);
+}
+
+.btn.secondary {
+  background: #ffffff09;
+  border-color: var(--border);
+}
+
+.btn.secondary:hover {
+  background: rgba(255,255,255,.08);
+}
+
+.orbit-scene {
+  width: min(82vw, 410px);
+  aspect-ratio: 1;
+  margin: 30px auto 12px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  perspective: 1000px;
+}
+
+.aura {
+  position: absolute;
+  inset: 15%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,126,174,.24), rgba(180,141,255,.16), transparent 70%);
+  animation: breathe 4s ease-in-out infinite, pulseGlow 6s ease-in-out infinite alternate;
+  box-shadow: 0 0 45px rgba(255,125,180,.18);
+}
+
+.orbit {
+  position: absolute;
+  inset: 8%;
+  border: 1px solid rgba(255,197,223,.55);
+  border-radius: 50%;
+  animation: spin 25s linear infinite;
+  box-shadow: inset 0 0 18px rgba(255,255,255,.08), 0 0 8px rgba(255,184,217,.15);
+}
+
+.orbit.two {
+  inset: 0;
+  border-style: dashed;
+  border-color: rgba(189,164,255,.55);
+  animation-direction: reverse;
+  animation-duration: 35s;
+}
+
+.orbit::after {
+  content: "✦";
+  position: absolute;
+  left: 12%;
+  top: 13%;
+  color: var(--gold);
+  font-size: 22px;
+  filter: drop-shadow(0 0 7px rgba(255,230,181,.8));
+  animation: sparkleOrbit 2.4s ease-in-out infinite alternate;
+}
+
+.orbit.two::after {
+  left: 80%;
+  top: 78%;
+  color: var(--pink);
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: .8; }
+  50% { transform: scale(1.13); opacity: .65; }
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 30px rgba(255,125,180,.12); }
+  100% { box-shadow: 0 0 65px rgba(180,148,255,.18); }
+}
+
+@keyframes sparkleOrbit {
+  0% { transform: scale(.9); opacity: .7; }
+  100% { transform: scale(1.25); opacity: 1; }
+}
+
+.couple {
+  position: relative;
+  z-index: 2;
+  width: min(52vw, 220px);
+  height: min(42vw, 180px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 24px rgba(255,134,183,.6));
+  animation: float 4s ease-in-out infinite, sway 4.8s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+.heart-beat {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 130px;
+  height: 117px;
+  overflow: visible;
+  transform: translateX(-50%);
+  transform-origin: center;
+  animation: heartbeat 1.35s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px rgba(255,120,170,.45))
+          drop-shadow(0 8px 18px rgba(255,79,145,.24));
+}
+
+.heart-beat path {
+  fill: url(#heartGradient);
+}
+
+.heart-beat .heart-shine {
+  fill: rgba(255,255,255,.2);
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  12% { transform: translateX(-50%) scale(1.1); }
+  22% { transform: translateX(-50%) scale(1); }
+  34% { transform: translateX(-50%) scale(1.16); }
+  48% { transform: translateX(-50%) scale(1); }
+}
+
+.people {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.person {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1;
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,.25));
+  animation: bob 2.8s ease-in-out infinite;
+}
+
+.person.girl {
+  animation-delay: .15s;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-13px) rotate(3deg); }
+}
+
+@keyframes sway {
+  0%, 100% { filter: drop-shadow(0 0 18px rgba(255,134,183,.5)) brightness(1); }
+  50% { filter: drop-shadow(0 0 28px rgba(255,134,183,.75)) brightness(1.08); }
+}
+
+.scroll-note {
+  margin-top: 15px;
+  font-size: .72rem;
+  letter-spacing: .18em;
+  color: #d8b4ce;
+}
+
+.container { max-width: 1080px; margin: auto; }
+
+.heading {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 42px;
+}
+
+.heading h2 {
+  font-size: clamp(2.3rem, 6vw, 4.2rem);
+  margin: 12px 0;
+  color: #fff1f8;
+}
+
+.heading p {
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.glass {
+  background: linear-gradient(135deg, #ffffff12, #ffffff05);
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 20px 65px #00000017;
+}
+
+.letter {
+  padding: clamp(25px, 6vw, 60px);
+  max-width: 820px;
+  margin: auto;
+}
+
+.letter h3 {
+  font-size: 1.8rem;
+  color: #ffc2dc;
+}
+
+.letter p {
+  line-height: 2;
+  color: #ead6e4;
+}
+
+.signature {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #ffc1db;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  padding: 25px;
+  transition: transform .3s, border-color .3s;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #ff9bc7a0;
+}
+
+.card-icon { font-size: 2.4rem; }
+
+.card h3 {
+  font-size: 1.5rem;
+  margin: 12px 0 8px;
+}
+
+.card p {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: .92rem;
+}
+
+.result {
+  min-height: 28px;
+  color: #ffc0dc;
+  line-height: 1.8;
+  margin-top: 15px;
+}
+
+.love-button {
+  padding: 10px 15px;
+  border-radius: 30px;
+  border: 1px solid #ffc1dc70;
+  background: #ffffff0b;
+  color: #ffdfed;
+  cursor: pointer;
+  margin: 4px;
+}
+
+.love-button:hover { background: #ff7cac30; }
+
+.care-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 15px;
+}
+
+.care-item { padding: 22px; }
+
+.care-item h3 { color: #ffd1e4; }
+
+.care-item p {
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.8;
+}
+
+.teddy-scene {
+  min-height: 300px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle, #6e427b65, transparent 72%);
+}
+
+.teddy {
+  font-size: clamp(6rem, 18vw, 9rem);
+  position: relative;
+  z-index: 2;
+  animation: breathe 3.4s ease-in-out infinite;
+  filter: drop-shadow(0 12px 15px #0003);
+}
+
+.moon {
+  position: absolute;
+  right: 17%;
+  top: 15%;
+  font-size: 3.3rem;
+  animation: float 5s infinite;
+}
+
+.zzz {
+  position: absolute;
+  left: 25%;
+  top: 28%;
+  color: #ffdaed;
+  font-size: 1.7rem;
+  animation: float 3s infinite;
+}
+
+.rest-text {
+  padding: 30px;
+}
+
+.rest-text h3 {
+  color: #ffc1db;
+  font-size: 2rem;
+}
+
+.rest-text p {
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.progress {
+  height: 6px;
+  border-radius: 20px;
+  background: #ffffff18;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #ff7fac, #b69aff);
+  transition: width .4s;
+}
+
+.love-meter {
+  padding: 28px;
+  text-align: center;
+}
+
+.love-meter h3 {
+  font-size: 1.8rem;
+  color: #ffc3dd;
+}
+
+.big-number {
+  font-size: 3.2rem;
+  font-family: 'Playfair Display', serif;
+  color: white;
+}
+
+.finale {
+  text-align: center;
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+.finale h2 {
+  font-size: clamp(2.6rem, 7vw, 5.3rem);
+  background: linear-gradient(90deg, white, #ffb3d3, #d5c0ff);
+  color: transparent;
+  background-clip: text;
+}
+
+.finale p {
+  max-width: 660px;
+  margin: 20px auto;
+  color: var(--muted);
+  line-height: 2;
+}
+
+.footer {
+  text-align: center;
+  padding: 25px;
+  color: #bfa1b5;
+  font-size: .8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.heart-float {
+  position: fixed;
+  bottom: -35px;
+  z-index: 80;
+  pointer-events: none;
+  animation: rise var(--duration) linear forwards;
+}
+
+.ice-heart {
+  position: absolute;
+  bottom: -35px;
+  left: var(--left);
+  color: #c5f5ff;
+  opacity: 0;
+  animation: iceDrift var(--duration) ease-in-out forwards;
+}
+
+.ice-heart::before {
+  content: "♥";
+  display: block;
+  font-size: var(--size);
+  line-height: 1;
+  color: #c5f5ff;
+  text-shadow:
+    0 0 7px rgba(189, 244, 255, .95),
+    0 0 18px rgba(105, 218, 255, .7),
+    0 0 30px rgba(105, 218, 255, .35);
+  animation: iceBeat 1.8s ease-in-out infinite;
+}
+
+@keyframes iceDrift {
+  0% { opacity: 0; transform: translate3d(0, 0, 0) rotate(-12deg); }
+  12% { opacity: .8; }
+  50% { transform: translate3d(var(--drift), -55vh, 0) rotate(10deg); }
+  88% { opacity: .65; }
+  100% { opacity: 0; transform: translate3d(var(--drift), -112vh, 0) rotate(-8deg); }
+}
+
+@keyframes iceBeat {
+  0%, 100% { transform: scale(1); }
+  18% { transform: scale(1.12); }
+  34% { transform: scale(1); }
+  48% { transform: scale(1.17); }
+  62% { transform: scale(1); }
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-115vh) translateX(var(--drift)) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity .8s, transform .8s;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#toast {
+  position: fixed;
+  left: 50%;
+  bottom: 25px;
+  transform: translate(-50%, 30px);
+  opacity: 0;
+  z-index: 100;
+  padding: 14px 22px;
+  background: #382044ed;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  color: white;
+  text-align: center;
+  width: max-content;
+  max-width: 90%;
+  transition: .3s;
+  pointer-events: none;
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+#surprise {
+  display: none;
+  margin-top: 22px;
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: #ffb4d410;
+  line-height: 2;
+  color: #ffe2ef;
+}
+
+#surprise.show { display: block; animation: appear .7s ease both; }
+
+@keyframes appear {
+  from { opacity: 0; transform: scale(.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media(max-width:700px) {
+  .nav { padding: 13px 4%; }
+  .nav-links { gap: 10px; }
+  .nav a { font-size: .68rem; }
+  .logo { font-size: .72rem; }
+  section { padding: 75px 5%; }
+  .two-column { grid-template-columns: 1fr; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+<div id="sparkles"></div>
+<div id="hearts"></div>
+
+<nav class="nav">
+  <div class="logo">♡ FOR MY BANGARAM</div>
+  <div class="nav-links">
+    <a href="#letter">Letter</a>
+    <a href="#games">Games</a>
+    <a href="#care">Care</a>
+    <a href="#forever">Forever</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">A little universe made just for you</div>
+
+    <h1>My Bangaram,<br>My Everything.</h1>
+
+    <p>
+      For my Mommy, my Ammu Kutty, my favourite person.
+      Even when miles separate us, my heart knows exactly where home is.
+      And home will always be you. 💗
+    </p>
+
+    <div class="orbit-scene">
+      <div class="aura"></div>
+      <div class="orbit"></div>
+      <div class="orbit two"></div>
+      <div class="couple" aria-label="A boy and a girl with a beating heart">
+        <svg class="heart-beat" viewBox="0 0 100 90" role="img" aria-label="Beating pink heart">
+          <defs>
+            <linearGradient id="heartGradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ffb2d0"/>
+              <stop offset="48%" stop-color="#ff5c98"/>
+              <stop offset="100%" stop-color="#ed347d"/>
+            </linearGradient>
+          </defs>
+          <path d="M50 88C44 82 5 54 5 31 5 15 16 5 30 5c9 0 16 5 20 14 4-9 11-14 20-14 14 0 25 10 25 26 0 23-39 51-45 57Z"/>
+          <path class="heart-shine" d="M17 30c0-9 6-15 14-15 5 0 9 2 12 6-3-1-5-1-8 0-7 2-11 8-11 16 0 5 2 10 5 15-7-7-12-14-12-22Z"/>
+        </svg>
+        <div class="people">
+          <div class="person boy" aria-label="boy">👦</div>
+          <div class="person girl" aria-label="girl">👧</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn" onclick="goTo('letter')">Open Your Love Letter 💌</button>
+      <button class="btn secondary" onclick="showHearts()">Send Me a Hug 🫂</button>
+    </div>
+
+    <div class="scroll-note">SCROLL INTO OUR LITTLE WORLD ↓</div>
+  </div>
+</header>
+
+<main>
+
+<section id="letter">
+  <div class="container">
+    <div class="heading reveal">
+      <div class="eyebrow">Chapter 01 · From my heart</div>
+      <h2>A Letter For You</h2>
+      <p>Some feelings are too big for a message, so I made you a whole little world.</p>
+    </div>
+
+    <article class="glass letter reveal">
+      <h3>My dearest Mommy, 💗</h3>
+
+      <p>
+        Hey, my Bangaram. If you are reading this, I want you to pause for
+        a moment, take a soft breath, and remember that somewhere in this
+        big world, there is a heart that loves you so very much.
+      </p>
+
+      <p>
+        I know I cannot always be beside you. I cannot always hold your
+        hand, brush your hair away from your face, bring you your
+        favourite snack, or wrap you in the warmest hug when your day
+        feels difficult.
+      </p>
+
+      <p>
+        But distance cannot stop me from caring. I can still listen to
+        you, remind you to rest, make you smile, and love you through
+        every little message and every quiet moment.
+      </p>
+
+      <p>
+        And especially when your period days arrive, please remember
+        that you do not have to be cheerful for me. You do not have to
+        pretend to be strong. You can be tired, quiet, emotional, sleepy,
+        or simply not in the mood. I want you to feel safe being yourself.
+      </p>
+
+      <p>
+        My Ammu Kutty, you are not loved only when you smile. You are
+        loved on the messy days, the sleepy days, the difficult days,
+        and the days when all you want is a little extra tenderness.
+      </p>
+
+      <p>
+        If I could make one wish, it would be to appear beside you for
+        five minutes, pull you into a hug, kiss your forehead, and tell
+        you that everything does not need to be figured out today.
+        Just breathe, baby. One moment at a time.
+      </p>
+
+      <p>
+        Until I can hold you in person, let these little words be my
+        arms around you. Let this tiny website remind you that someone
+        is thinking about you, choosing you, and cheering for you.
+      </p>
+
+      <p>
+        You are my favourite notification, my sweetest distraction,
+        my safe place, and one of the most beautiful parts of my life.
+      </p>
+
+      <p class="signature">
+        Always yours,<br>
+        Your person, with all my love. 💗
+      </p>
+
+      <button class="btn" onclick="showHearts()">Send a Million Kisses 💋</button>
+    </article>
+  </div>
+</section>
+
+<section id="games">
+  <div class="container">
+    <div class="heading reveal">
+      <div class="eyebrow">Chapter 02 · Little happiness</div>
+      <h2>Our Love Corner</h2>
+      <p>Tap the little surprises, collect some smiles, and remember how special you are.</p>
+    </div>
+
+    <div class="cards">
+
+      <article class="glass card reveal">
+        <div class="card-icon">💌</div>
+        <h3>Love Note Machine</h3>
+        <p>A tiny note, delivered straight to your heart.</p>
+        <button class="btn" onclick="loveNote()">Get My Note</button>
+        <div class="result" id="noteResult" aria-live="polite"></div>
+      </article>
+
+      <article class="glass card reveal">
+        <div class="card-icon">🎲</div>
+        <h3>Pick a Heart</h3>
+        <p>Choose any heart and see what your favourite person wants you to remember.</p>
+        <div>
+          <button class="love-button" onclick="pickHeart(0)">💗</button>
+          <button class="love-button" onclick="pickHeart(1)">💜</button>
+          <button class="love-button" onclick="pickHeart(2)">💖</button>
+        </div>
+        <div class="result" id="heartResult" aria-live="polite"></div>
+      </article>
+
+      <article class="glass card reveal">
+        <div class="card-icon">🌷</div>
+        <h3>Reasons I Adore You</h3>
+        <p>There are too many reasons to fit into one message.</p>
+        <button class="btn" onclick="reason()">One More Reason</button>
+        <div class="result" id="reasonResult" aria-live="polite"></div>
+      </article>
+
+      <article class="glass card reveal">
+        <div class="card-icon">🤗</div>
+        <h3>Virtual Hug Booth</h3>
+        <p>For whenever you need a little warmth from far away.</p>
+        <button class="btn" onclick="hug()">Get a Hug</button>
+        <div class="result" id="hugResult" aria-live="polite"></div>
+      </article>
+
+      <article class="glass card reveal">
+        <div class="card-icon">✨</div>
+        <h3>Today's Love Mission</h3>
+        <p>A tiny mission to make your day a little softer.</p>
+        <button class="btn" onclick="mission()">Reveal Mission</button>
+        <div class="result" id="missionResult" aria-live="polite"></div>
+      </article>
+
+      <article class="glass card reveal">
+        <div class="card-icon">💝</div>
+        <h3>Secret Surprise</h3>
+        <p>There is something sweet waiting just for you.</p>
+        <button class="btn" onclick="secret()">Unlock Surprise</button>
+        <div id="surprise" aria-live="polite">
+          Surprise, my Bangaram! 💗<br><br>
+          If I could choose one place in the whole world to be right now,
+          it would be next to you.<br><br>
+          No fancy place, no expensive gift, no perfect plan.
+          Just your hand in mine, your head on my shoulder,
+          and the happiness of being together. 🫂
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="care">
+  <div class="container">
+    <div class="heading reveal">
+      <div class="eyebrow">Chapter 03 · Soft days</div>
+      <h2>For My Sleepy Ammu Kutty</h2>
+      <p>You deserve gentleness, patience, comfort, and absolutely no pressure to be okay instantly.</p>
+    </div>
+
+    <div class="glass two-column reveal">
+      <div class="teddy-scene">
+        <div class="moon">🌙</div>
+        <div class="zzz">Zzz</div>
+        <div class="teddy">🧸</div>
+      </div>
+
+      <div class="rest-text">
+        <h3>Your Little Rest Corner</h3>
+        <p>
+          Imagine me tucking a blanket around you, giving you your
+          favourite teddy, and reminding you that you do not have to
+          finish everything today.
+        </p>
+        <p>
+          If you feel tired, rest. If you feel like talking, I am here.
+          If you need quiet, take your quiet. If you want a cuddle,
+          imagine the biggest one coming your way. 💗
+        </p>
+        <button class="btn" onclick="restMessage()">A Message for My Tired Girl</button>
+        <div class="result" id="restResult" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <div class="care-grid" style="margin-top:22px">
+      <article class="glass care-item reveal">
+        <div class="card-icon">🫖</div>
+        <h3>Something Warm</h3>
+        <p>If it feels comforting, try a warm drink or a heating pad wrapped safely in a towel.</p>
+      </article>
+
+      <article class="glass care-item reveal">
+        <div class="card-icon">💧</div>
+        <h3>Little Sips</h3>
+        <p>Keep some water nearby. You deserve care even when you do not feel like doing much.</p>
+      </article>
+
+      <article class="glass care-item reveal">
+        <div class="card-icon">🛌</div>
+        <h3>Permission to Rest</h3>
+        <p>You do not need to earn your rest. Take a break whenever your body asks for one.</p>
+      </article>
+
+      <article class="glass care-item reveal">
+        <div class="card-icon">💗</div>
+        <h3>Tell Me What Helps</h3>
+        <p>Everyone experiences periods differently. Your comfort matters more than guessing what you need.</p>
+      </article>
+    </div>
+
+    <p class="center" style="color:var(--muted);line-height:1.8;margin-top:25px">
+      A gentle reminder: if your pain is severe, unusual, or stops you from doing everyday activities,
+      consider getting medical advice.
+    </p>
+  </div>
+</section>
+
+<section id="distance">
+  <div class="container">
+    <div class="heading reveal">
+      <div class="eyebrow">Chapter 04 · Miles apart</div>
+      <h2>Distance Is Not the End</h2>
+      <p>We may not share the same room today, but we can still share a thousand little moments.</p>
+    </div>
+
+    <div class="cards">
+      <article class="glass card reveal">
+        <div class="card-icon">📱</div>
+        <h3>Our Little Calls</h3>
+        <p>Even an ordinary conversation can become my favourite memory when it is with you.</p>
+      </article>
+
+      <article class="glass card reveal">
+        <div class="card-icon">🎧</div>
+        <h3>One Shared Song</h3>
+        <p>Choose a song together. Whenever it plays, let it remind you of a moment that belongs to us.</p>
+      </article>
+
+      <article class="glass card reveal">
+        <div class="card-icon">🌌</div>
+        <h3>Same Sky</h3>
+        <p>Look at the stars when you can. We might be in different places, but we can admire the same sky.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="forever">
+  <div class="container">
+    <div class="heading reveal">
+      <div class="eyebrow">Final chapter · Still choosing you</div>
+      <h2>A Tiny Promise</h2>
+      <p>Not a promise that every day will be perfect. A promise to keep making room for care, honesty, and love.</p>
+    </div>
+
+    <div class="glass love-meter reveal">
+      <div class="card-icon">💗</div>
+      <h3>Our Little Love Counter</h3>
+      <p style="color:var(--muted);line-height:1.8">
+        Every tap is a reminder that love grows through the little things.
+      </p>
+      <div class="big-number" id="loveCount">0</div>
+      <div class="progress"><span id="loveProgress"></span></div>
+      <button class="btn" onclick="addLove()">Add a Little Love 💕</button>
+      <div class="result" id="countMessage" aria-live="polite">
+        Let's fill this little corner with love.
+      </div>
+    </div>
+
+    <div class="finale reveal">
+      <div class="eyebrow">For you, today and always</div>
+      <h2>My Mommy.<br>My Bangaram.<br>My Home. 💗</h2>
+
+      <p>
+        If the world gets too loud, come back to this little corner.
+        If the day feels heavy, remember that you are allowed to rest.
+        If the distance feels too big, remember that you are deeply
+        cherished even from far away.
+      </p>
+
+      <p>
+        I cannot promise that I will always find the perfect words.
+        But I can keep trying to understand you, care for you,
+        make you laugh, and show you that you matter.
+      </p>
+
+      <p class="script" style="font-size:1.5rem;color:#ffc1db">
+        Until the next hug, keep a little piece of my heart with you. 💌
+      </p>
+
+      <button class="btn" onclick="finalSurprise()">One Last Surprise ✨</button>
+      <div class="result" id="finalResult" aria-live="polite"></div>
+
+      <div class="actions">
+        <button class="btn secondary" onclick="goTo('letter')">Read My Letter Again</button>
+        <button class="btn secondary" onclick="showHearts()">Fill the Sky with Hearts 💗</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  Made with love, for one very special Bangaram. ♡
+  <br><br>
+  No distance can make this little corner less yours.
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* CREATE THE STARRY SKY */
+(function createStars() {
+  const sky = document.getElementById('stars');
+  const sparkles = document.getElementById('sparkles');
+
+  for (let i = 0; i < 100; i++) {
+    const star = document.createElement('span');
+    star.className = 'star';
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 100 + '%';
+    star.style.animationDelay = Math.random() * 4 + 's';
+    star.style.animationDuration = (2 + Math.random() * 4) + 's';
+    sky.appendChild(star);
+  }
+
+  for (let i = 0; i < 24; i++) {
+    const sparkle = document.createElement('span');
+    sparkle.className = 'sparkle';
+    sparkle.style.left = Math.random() * 100 + '%';
+    sparkle.style.top = Math.random() * 100 + '%';
+    sparkle.style.animationDelay = Math.random() * 5 + 's';
+    sparkle.style.animationDuration = (2.5 + Math.random() * 4.5) + 's';
+    sparkles.appendChild(sparkle);
+  }
+})();
+
+/* A gentle stream of ice-blue hearts drifts through the whole page. */
+const iceHeartSky = document.getElementById('hearts');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+function createIceHeart() {
+  const heart = document.createElement('span');
+  heart.className = 'ice-heart';
+  heart.setAttribute('aria-hidden', 'true');
+  heart.style.setProperty('--left', Math.random() * 100 + '%');
+  heart.style.setProperty('--size', (14 + Math.random() * 17) + 'px');
+  heart.style.setProperty('--duration', (8 + Math.random() * 5) + 's');
+  heart.style.setProperty('--drift', (Math.random() * 70 - 35) + 'px');
+  iceHeartSky.appendChild(heart);
+
+  heart.addEventListener('animationend', () => heart.remove(), { once: true });
+}
+
+if (!reduceMotion.matches) {
+  setInterval(() => {
+    if (!document.hidden) createIceHeart();
+  }, 1150);
+}
+
+/* SHOW ELEMENTS AS THEY ENTER THE SCREEN */
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => {
+  revealObserver.observe(el);
+});
+
+/* NAVIGATION */
+function goTo(id) {
+  document.getElementById(id).scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
+}
+
+/* SMALL POP-UP MESSAGE */
+let toastTimer;
+
+function toast(message) {
+  const el = document.getElementById('toast');
+  el.textContent = message;
+  el.classList.add('show');
+
+  clearTimeout(toastTimer);
+
+  toastTimer = setTimeout(() => {
+    el.classList.remove('show');
+  }, 2600);
+}
+
+/* FLOATING HEARTS */
+function floatingHeart() {
+  const heart = document.createElement('div');
+  heart.className = 'heart-float';
+
+  const symbols = ['💗', '💕', '💖', '💘', '💞', '✨', '🌸'];
+
+  heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+  heart.style.left = Math.random() * 100 + '%';
+  heart.style.fontSize = (15 + Math.random() * 25) + 'px';
+  heart.style.setProperty('--duration', (5 + Math.random() * 5) + 's');
+  heart.style.setProperty('--drift', (Math.random() * 140 - 70) + 'px');
+  heart.style.filter = 'drop-shadow(0 0 10px rgba(255, 143, 196, 0.7))';
+  heart.style.animation = 'rise ' + (5 + Math.random() * 5) + 's linear forwards';
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 10500);
+}
+
+function showHearts() {
+  for (let i = 0; i < 30; i++) {
+    setTimeout(floatingHeart, i * 70);
+  }
+
+  toast('A thousand little hugs for you, Bangaram! 💗');
+}
+
+/* LOVE NOTES */
+const loveNotes = [
+  "Hey, Bangaram. Just a reminder: you are someone's favourite person. Mine. 💗",
+  "If I could teleport anywhere right now, I would choose the place where you are.",
+  "You do not need to be perfect to be loved. You just need to be you.",
+  "My favourite notification will always be your name appearing on my screen.",
+  "I hope something makes you smile today. And if nothing does, I hope this does. 🌷",
+  "Distance can separate our hands, but it cannot erase the care I have for you.",
+  "You deserve patience, kindness, warm hugs, and a love that lets you breathe.",
+  "If today is difficult, we can take it one little moment at a time.",
+  "My Ammu Kutty, you are precious on your best days and your hardest days.",
+  "Somewhere in my day, there is always a little moment that reminds me of you."
+];
+
+function loveNote() {
+  const message = loveNotes[Math.floor(Math.random() * loveNotes.length)];
+  document.getElementById('noteResult').textContent = message;
+}
+
+/* PICK A HEART */
+const heartMessages = [
+  "💗 Pink heart: You are loved exactly as you are. No pretending required.",
+  "💜 Purple heart: You make ordinary moments feel magical.",
+  "💖 Sparkly heart: I hope a beautiful little surprise finds you today."
+];
+
+function pickHeart(index) {
+  document.getElementById('heartResult').textContent = heartMessages[index];
+  showMiniHearts();
+}
+
+/* REASONS I LOVE YOU */
+const reasons = [
+  "Because of the way you make me smile without even trying.",
+  "Because your happiness matters to me.",
+  "Because you have your own beautiful way of seeing the world.",
+  "Because I love hearing about the little things in your day.",
+  "Because I can imagine building lovely memories with you.",
+  "Because you deserve to be appreciated, not just on special days.",
+  "Because even a simple conversation with you can mean so much.",
+  "Because you are allowed to have difficult days and still be wonderful.",
+  "Because there is something special about being your person.",
+  "Because I keep finding new things to appreciate about you."
+];
+
+let reasonIndex = 0;
+
+function reason() {
+  const el = document.getElementById('reasonResult');
+  el.textContent = reasons[reasonIndex % reasons.length];
+  reasonIndex++;
+}
+
+/* VIRTUAL HUG */
+const hugs = [
+  "🫂 Imagine a long hug where nobody has to say anything.",
+  "🤗 Forehead kiss, warm blanket, and absolutely no rushing.",
+  "💗 Consider this your reminder that you do not have to carry every feeling alone.",
+  "🧸 A soft teddy hug is on its way. Please accept this imaginary delivery.",
+  "💕 Close your eyes, take a slow breath, and imagine being held with care."
+];
+
+let hugIndex = 0;
+
+function hug() {
+  document.getElementById('hugResult').textContent =
+    hugs[hugIndex % hugs.length];
+
+  hugIndex++;
+  showMiniHearts();
+}
+
+/* LITTLE DAILY MISSIONS */
+const missions = [
+  "Mission: Drink some water and give yourself a two-minute break.",
+  "Mission: Listen to one song that makes you happy.",
+  "Mission: Tell me one little thing that happened in your day.",
+  "Mission: Stretch gently, relax your shoulders, and take a slow breath.",
+  "Mission: Eat something nourishing if you are hungry.",
+  "Mission: Take a moment to notice one thing you like about yourself.",
+  "Mission: Put your phone down for a few minutes and rest your eyes.",
+  "Mission: Send me one emoji that describes your current mood."
+];
+
+let missionIndex = 0;
+
+function mission() {
+  document.getElementById('missionResult').textContent =
+    missions[missionIndex % missions.length];
+
+  missionIndex++;
+}
+
+/* PERIOD-DAY COMFORT */
+const restMessages = [
+  "Baby, you do not need to do everything today. Let's take it slowly. 💗",
+  "A warm blanket, something comforting, and permission to rest. That is your assignment today.",
+  "If you want to talk, I am here. If you want quiet, that is okay too.",
+  "Your feelings do not need to make perfect sense for them to deserve kindness.",
+  "My Bangaram, please be gentle with yourself. You deserve the same care you give others.",
+  "You are not a burden for needing comfort. Everyone deserves tenderness sometimes."
+];
+
+let restIndex = 0;
+
+function restMessage() {
+  document.getElementById('restResult').textContent =
+    restMessages[restIndex % restMessages.length];
+
+  restIndex++;
+  showMiniHearts();
+}
+
+/* SECRET SURPRISE */
+function secret() {
+  const surprise = document.getElementById('surprise');
+  surprise.classList.toggle('show');
+
+  if (surprise.classList.contains('show')) {
+    toast('Your little secret has been unlocked! 💝');
+    showMiniHearts();
+  }
+}
+
+/* LAST SURPRISE */
+function finalSurprise() {
+  const messages = [
+    "If I could hold your hand right now, I would remind you how much you mean to me. 💗",
+    "One day, I hope we can laugh about how far apart we once were while sitting right next to each other. 🌷",
+    "You are not just a chapter in my story. You are someone I hope to make many beautiful memories with. 💕",
+    "Until our next hug, remember this: you matter, your feelings matter, and you deserve love that feels kind. 🫂"
+  ];
+
+  const message = messages[Math.floor(Math.random() * messages.length)];
+
+  document.getElementById('finalResult').textContent = message;
+
+  showHearts();
+}
+
+/* LITTLE HEART BURST */
+function showMiniHearts() {
+  for (let i = 0; i < 9; i++) {
+    setTimeout(floatingHeart, i * 100);
+  }
+}
+
+/* LOVE COUNTER */
+let loveCount = 0;
+
+function addLove() {
+  loveCount++;
+
+  document.getElementById('loveCount').textContent = loveCount;
+
+  const progress = Math.min(loveCount % 101, 100);
+
+  document.getElementById('loveProgress').style.width = progress + '%';
+
+  let message = 'Every little bit of love counts. 💗';
+
+  if (loveCount >= 100) {
+    message = '100 little taps, and still there are a million more things to appreciate about you! 💖';
+  } else if (loveCount >= 50) {
+    message = 'Look at all that love, Bangaram! Keep that smile. 💕';
+  } else if (loveCount >= 20) {
+    message = 'Our little corner is getting full of hearts! 🌸';
+  } else if (loveCount >= 10) {
+    message = 'Ten little reminders that you are cherished. 🫂';
+  }
+
+  document.getElementById('countMessage').textContent = message;
+
+  if (loveCount % 10 === 0) showMiniHearts();
+}
+
+/* INITIAL HEARTS */
+setTimeout(() => {
+  for (let i = 0; i < 5; i++) {
+    setTimeout(floatingHeart, i * 500);
+  }
+}, 1000);
+
+/* CONSOLE EASTER EGG */
+console.log(
+  '%cFor my Bangaram 💗',
+  'font-size:24px;color:#ff8bb8;font-weight:bold;'
+);
+
+console.log('A tiny website made to remind someone that she is loved.');
+</script>
+
+</body>
+</html>
+```
